@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Surprise for Yashika</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styling */
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(120deg, #004c4c, #66cdaa);
+      color: #fdf6e3;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Heading Styles */
+    h1 {
+      margin: 20px;
+      font-size: 4rem;
+      font-family: "Dancing Script", cursive;
+      color: #ffd700;
+      text-shadow: 0 0 20px #ffd700, 0 0 40px #fff3b0;
+      animation: glow 2s infinite;
+    }
+
+    h2, h3 {
+      margin: 15px;
+      color: #fff7d6;
+      text-shadow: 0 0 10px #ffe066, 0 0 20px #ffeb99;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    /* Button Styles */
+    button {
+      margin: 15px;
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #004c4c, #ffd700);
+      border: none;
+      color: #ffffff;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: "Roboto", sans-serif;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Content Container */
+    #content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Image Styling */
+    .friend-photo {
+      margin: 20px auto;
+      max-width: 250px;
+      border-radius: 50%;
+      border: 5px solid #ffd700;
+      box-shadow: 0 0 20px #ffcc33, 0 0 30px #ffeb99;
+    }
+
+    .krishna-image {
+      max-width: 200px;
+      margin: 20px auto;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #ffffff, 0 0 30px #ffee99;
+    }
+
+    /* Floating Text Box */
+    .message {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 70%;
+      font-size: 1.4rem;
+      font-family: "Dancing Script", cursive;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      color: #f9f6ef;
+    }
+
+    /* Fireworks */
+    #fireworks {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.gifer.com/7Q5j.gif') no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Quote Styling */
+    .quote {
+      font-size: 1.6rem;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+      color: #ffffff;
+      font-family: "Roboto", sans-serif;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 20px #ffd700, 0 0 40px #fff3b0;
+      }
+      50% {
+        text-shadow: 0 0 30px #ffd700, 0 0 50px #ffe066;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Happy New Year 2025 ✨</h1>
+  <h3>Click below to start the surprise for Yashika!</h3>
+  <button onclick="startSurprise()">Start Surprise 💝</button>
+  <div id="content">
+    <div id="phase1">
+      <h2>"Yashika, you are the most wonderful friend ever!"</h2>
+      <div class="message">
+        <p>
+          Yashika, your friendship is the biggest blessing of my life. Thank you for always being there, bringing joy, and making every day better. Here's to a year of unforgettable memories, happiness, and success!
+        </p>
+      </div>
+      <button onclick="showFireworks()">Next 🎇</button>
+    </div>
+    <div id="fireworks-phase" style="display: none;">
+      <div id="fireworks"></div>
+      <h2>🎆 Let's Celebrate! 🎆</h2>
+      <button onclick="showFriendPhoto()">Special Message ✨</button>
+    </div>
+    <div id="friend-phase" style="display: none;">
+      <img class="friend-photo" src="yashika.jpg" alt="Yashika's Photo">
+      <div class="message">
+        <p>
+          Yashika, you are the best! Thank you for your kindness, strength, and everything you do for me. Your friendship means the world. ❤️
+        </p>
+      </div>
+      <button onclick="revealKrishna()">A Blessing 🌟</button>
+    </div>
+    <div id="krishna-phase" style="display: none;">
+      <img class="krishna-image" src="krishna.jpg" alt="Lord Krishna">
+      <div class="quote">
+        <p>
+          <strong>Bhagavad Gita:</strong> "You have the right to perform your duties, but not to the fruits of your actions. Let not the results be your motive, and do not give way to inaction."
+        </p>
+      </div>
+      <button onclick="playSong()">Play Song 🎵</button>
+    </div>
+  </div>
+  <audio id="new-year-song">
+    <source src="new-year-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function startSurprise() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }
+
+    function showFireworks() {
+      document.getElementById("phase1").style.display = "none";
+      document.getElementById("fireworks").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("fireworks-phase").style.display = "block";
+        document.getElementById("fireworks").style.display = "none";
+      }, 3000);
+    }
+
+    function showFriendPhoto() {
+      document.getElementById("fireworks-phase").style.display = "none";
+      document.getElementById("friend-phase").style.display = "block";
+    }
+
+    function revealKrishna() {
+      document.getElementById("friend-phase").style.display = "none";
+      document.getElementById("krishna-phase").style.display = "block";
+    }
+
+    function playSong() {
+      document.getElementById("new-year-song").play();
+    }
+  </script>
+</body>
+</html>
